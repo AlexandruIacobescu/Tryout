@@ -44,7 +44,7 @@ public class HelloApplication extends Application{
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Stage_1.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Products Manager Toolkit");
-            stage.getIcons().add(new Image("C:\\Users\\ALEX\\IdeaProjects\\Tryout\\pmt.png"));
+            stage.getIcons().add(new Image("H:\\IntelliJ\\Tryout\\pmt.png"));
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();

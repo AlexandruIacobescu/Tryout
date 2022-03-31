@@ -60,7 +60,7 @@ public class DatabaseConnectionPopUp {
         password = connPass.getText();
         url = getUrl();
         if(connectionOk(uname, password, url)){
-            if(saveBox.isSelected()){
+            if(saveBox.isSelected()) {
                 try {
                     PrintWriter printer = new PrintWriter(new FileOutputStream("database_connection_details.txt"));
                     printer.write(uname + "\n");
@@ -70,23 +70,23 @@ public class DatabaseConnectionPopUp {
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-                HelloApplication.uname = uname;
-                HelloApplication.password = password;
-                HelloApplication.url = url;
-                try {
-                    Parent root = FXMLLoader.load(getClass().getResource("Stage_1.fxml"));
-                    Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-                    Scene scene = new Scene(root);
-                    stage.setTitle("Products Manager Toolkit");
-                    stage.setScene(scene);
-                    stage.centerOnScreen();
-                    stage.show();
-                }catch(Exception ex){
-                    System.out.println(ex);
-                }
+            }
+            HelloApplication.uname = uname;
+            HelloApplication.password = password;
+            HelloApplication.url = url;
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("Stage_1.fxml"));
+                Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setTitle("Products Manager Toolkit");
+                stage.setScene(scene);
+                stage.centerOnScreen();
+                stage.show();
+            }catch(Exception ex){
+                System.out.println(ex);
             }
         }
-        else{
+        else {
             messageLabel.setTextFill(Color.RED);
             messageLabel.setText("Connection : " + url + " failed.");
             Message msg = new Message(messageLabel, 12000);
