@@ -410,6 +410,6 @@ public class Stage_2Controller implements Initializable,TableInitializable,Exita
             e.printStackTrace();
         }
         opComboBox.getItems().addAll("Insert", "Search", "Delete", "Refresh Table", "Export to CSV", "Import from CSV", "Delete Table");
-        fileChooser.setInitialDirectory(new File("H:\\IntelliJ\\Project_2"));
+        fileChooser.setInitialDirectory(new File("..\\"));
     }
 }
