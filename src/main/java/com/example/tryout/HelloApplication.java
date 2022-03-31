@@ -1,17 +1,16 @@
 package com.example.tryout;
+
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.Scanner;
 
 public class HelloApplication extends Application{
@@ -44,7 +43,7 @@ public class HelloApplication extends Application{
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Stage_1.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Products Manager Toolkit");
-            stage.getIcons().add(new Image("H:\\IntelliJ\\Tryout\\pmt.png"));
+            stage.getIcons().add(new Image("C:\\Users\\ALEX\\IdeaProjects\\Tryout\\pmt.png"));
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
@@ -59,7 +58,7 @@ public class HelloApplication extends Application{
         }
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         params = args;
         launch(args);
     }

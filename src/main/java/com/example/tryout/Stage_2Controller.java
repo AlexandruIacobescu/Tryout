@@ -343,13 +343,17 @@ public class Stage_2Controller implements Initializable,TableInitializable,Exita
             case "Export to CSV"->{
                 fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("csv files (*.csv)","*.csv"));
                 File file = fileChooser.showSaveDialog(new Stage());
+                boolean labelOk = false;
                 if(file != null){
                     saveProductstocsv(file);
+                    labelOk = true;
                 }
-                errorLabel.setText("Table exported successfully.");
-                errorLabel.setTextFill(Color.GREEN);
-                Message msg = new Message(errorLabel, 4000, 597, 320);
-                msg.start();
+                if(labelOk) {
+                    errorLabel.setText("Table exported successfully.");
+                    errorLabel.setTextFill(Color.GREEN);
+                    Message msg = new Message(errorLabel, 4000, 597, 320);
+                    msg.start();
+                }
             }
             case "Import from CSV"->{
                 File file = fileChooser.showOpenDialog(new Stage());

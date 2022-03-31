@@ -47,7 +47,10 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <Label fx:id="messageLabel" layoutX="91.0" layoutY="415.0" text="Label" visible="false" />
+      <Label fx:id="messageLabel" layoutX="91.0" layoutY="415.0" text="Label" visible="false">
+         <font>
+            <Font name="Consolas" size="13.0" />
+         </font></Label>
       <Label layoutX="411.0" layoutY="64.0" text="Server" textFill="#00618a">
          <font>
             <Font name="System Bold" size="24.0" />
