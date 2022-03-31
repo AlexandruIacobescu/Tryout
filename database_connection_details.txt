@@ -1,0 +1,3 @@
+root
+Zeppelin2001
+jdbc:mysql://localhost:3306/market

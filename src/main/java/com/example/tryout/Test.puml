@@ -1,0 +1,173 @@
+@startuml
+
+class Thread{
+    + run() void
+}
+class Message extends Thread{
+    - Label label
+    - int milis
+    - double x
+    - double y
+    - initialX
+    - initialY
+    - boolean move = false
+    + Message(Label, int)
+    + Message(Label, int, double, double)
+    - showMessage() void
+    - moveLabel() void
+    + run() void
+}
+class Employee{
+    - SimpleStringProperty fnm
+    - SimpleStringProperty lnm
+    - SimpleStringProperty hireDate
+    - SimpleStringProperty dept
+    - SimpleStringProperty email
+    - SimpleStringProperty eid
+    - SimpleStringProperty SimpleStringProperty
+    - SimpleStringProperty phone
+    - SimpleDoubleProperty salary
+    + Employee(String, String, String, String, String , String, Double, String, String)
+    + getEid() String
+    + getFnm() String
+    + getLnm() String
+    + getSsn() String
+    + getHireDate() String
+    + getDept() String
+    + getSal() double
+    + getEmail() String
+    + getPhone() String
+}
+
+class Product{
+    - SimpleStringProperty title
+    - SimpleStringProperty category
+    - SimpleStringProperty expdate
+    - SimpleIntegerProperty id
+    - SimpleIntegerProperty units
+    + Product(Integer, String, String, String, Integer, String)
+    + getId() int
+    + getTitle() String
+    + getCategory() String
+    + getUnits() int
+    + getExpDate() String
+}
+
+class Application{
+    + start() void
+}
+
+class HelloApplication extends Application{
+    + static String[] params
+    + static final String uname
+    + main() void
+    +start() void
+}
+interface Initializable{
+    + initialize(URL, ResourceBundle) void
+}
+class HelloController implements Initializable {
+    - TextField unameTextField un
+    - TextField passTextFIeld
+    - Label loginError
+    + exitButton_Click() void
+    + login() void
+    + errorLabelVisibilityChange() void
+    + adminButton_Click() void
+    + registerButton_Click() void
+    + initialize(URL, ResourceBundle) void
+}
+
+class Stage_2Controller implements Initializable,TableInitializable,Exitable {
+    + TextField titleField
+    + TextField categoryField
+    + TextField unitsField
+    + TextField expField
+    + Label errorLabel
+    + DatePickerdatePicker
+    + TableView<Product> tableView
+    + TableColumn<Product, Integer> idCol
+    + TableColumn<Product, Integer> uniCol
+    + TableColumn<Product, String> titCol
+    + TableColumn<Product, String> catCol
+    + TableColumn<Product, String> bbCol
+    + ComboBox<String> opComboBox
+    + CheckBox idCheckBox
+    + CheckBox headerCheckBox
+    + initTable() void
+    + initTableFromCsv(File) void
+    + loadTable(ResultSet)
+    + backButton_Click(ActionEvent) void
+    + datePicker_Click() void
+    + insertIntoProducts() void
+    + searchProducts(boolean[]) void
+    + deleteProducts(boolean[]) void
+    + saveProductstocsv(File) void
+    + exeButton_Click() void
+    + hideErrorLabel() void
+    + exitButton_Click() void
+    + clearButton_Click() void
+    + opComboBox_Click() void
+    + initialize(URL, ResourceBundle) void
+}
+class Stage_3Controller implements Initializable,TableInitializable,Exitable {
+    - Button backButton
+    - Button insertButton
+    - Button exitButton
+    - Button generateButton
+    - TableColumn<Employee, String> deptCol
+    - TableColumn<Employee, String> eidCol
+    - TableColumn<Employee, String> emailCol
+    - TableColumn<Employee, String> fnmCol
+    - TableColumn<Employee, String> phoneCol
+    - TableColumn<Employee, String> ssnCol
+    - TableColumn<Employee, String> lnmCol
+    - TableColumn<Employee, String> hireCol
+    - DatePicker hireDatePicker
+    - TextField emailField
+    - TextField empField
+    - TextField fnmField
+    - TextField phoneField
+    - TextField salField
+    - TextField ssnField
+    - TextField fnmField
+    - ComboBox<String> deptComboBox
+    - TableView<Employee> employeesTableView
+    - TableColumn<Employee, Double> salCol
+    - Label controlLabel
+    + initTable() void
+    + exitButton_Click() void
+    + generateCheck() void
+    + generateButton_Click() void
+    + insertButton_CLick() void
+    + refreshButton_Click() void
+    + clearButton_Click() void
+    + iInitialize(URL, ResourceBundle) void
+}
+class Register_StageController{
+    + TextField unameField
+    + TextField eidField
+    + PasswordField passField
+    + PasswordField cpassField
+    + Label controlLabel
+    + fieldsOK() boolean
+    + createButton_Click() void
+    + backButton_Click() void
+}
+
+class adminLoginStageController implements Initializable, Exitable{
+    + TextField unameTextField
+    + TextField passTextField
+    + Label errorlabel
+    + loginButton_Click() void
+    + backButton_Click(ActionEvent) void
+    + exitButton_Click() void
+    + initialize(URL, ResourceBundle) void
+}
+interface TableInitializable{
+    + ititTable() void
+}
+interface Exitable{
+    + exitButton_Click() void
+}
+@enduml
