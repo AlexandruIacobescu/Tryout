@@ -54,7 +54,6 @@ public class Stage_2Controller implements Initializable,TableInitializable,Exita
         catCol.setCellValueFactory(new PropertyValueFactory<>("Category"));
         uniCol.setCellValueFactory(new PropertyValueFactory<>("Units"));
         bbCol.setCellValueFactory(new PropertyValueFactory<>("ExpDate"));
-        //tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         ObservableList<Product> products = FXCollections.observableArrayList();
         Connection conn = DriverManager.getConnection(HelloApplication.url, HelloApplication.uname, HelloApplication.password);
         Statement st = conn.createStatement();
@@ -255,7 +254,6 @@ public class Stage_2Controller implements Initializable,TableInitializable,Exita
                 if(!exceptionFlag){
                     errorLabel.setText("Insertion Successful.");
                     errorLabel.setTextFill(Color.GREEN);
-                    //errorLabel.setVisible(true);
                     Message msg = new Message(errorLabel, 4000);
                     msg.start();
                     initTable();

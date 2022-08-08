@@ -1,3 +1,3 @@
 root
 Zeppelin2001
-jdbc:mysql://127.0.0.1:3306/market
+jdbc:mysql://localhost:3306/market

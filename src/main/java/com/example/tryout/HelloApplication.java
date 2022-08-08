@@ -22,6 +22,7 @@ public class HelloApplication extends Application{
             scanner = new Scanner(new File("database_connection_details.txt"));
         }
         catch(FileNotFoundException e){
+            System.out.println("Warning: no database connection details text file found.");
             return false;
         }
         try {
